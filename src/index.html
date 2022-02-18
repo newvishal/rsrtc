@@ -6,8 +6,38 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="./assets/admin/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/admin/css/style.css">
+  <link rel="stylesheet" href="./assets/admin/css/skin-modes.css">
+  <link rel="stylesheet" href="./assets/admin/css/icons.css">
+  <link rel="stylesheet" href="./assets/admin/plugins/p-scroll/perfect-scrollbar.css">
+  <link rel="stylesheet" href="./assets/admin/plugins/single-page/css/main.css">
+  <!-- COLOR SKIN CSS -->
+  <link id="theme" rel="stylesheet" type="text/css" media="all" href="./assets/admin/colors/color1.css" />
+  <link href="./assets/admin/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body class="app sidebar-mini Left-menu-Default Sidemenu-left-icons sidebar-gone">
   <app-root></app-root>
+  <script src="./assets/js/jquery-2.2.4.min.js"></script>
+  <script src="./assets/js/jquery-ui.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/admin/plugins/sidemenu/sidemenu.js"></script>
+  <!-- DATA TABLE JS-->
+  <script src="./assets/admin/plugins/datatable/jquery.dataTables.min.js"></script>
+  <script src="./assets/admin/plugins/datatable/dataTables.bootstrap4.min.js"></script>
+  <script src="./assets/admin/plugins/datatable/datatable.js"></script>
+  <script src="./assets/admin/plugins/datatable/datatable-2.js"></script>
+  <script src="./assets/admin/plugins/datatable/dataTables.responsive.min.js"></script>
+  <script>
+    $(document).on('click','[data-toggle="sidebar"]',function(event) {
+        event.preventDefault();
+        $('.app').toggleClass('sidenav-toggled');
+      });
+  </script>
 </body>
 </html>
