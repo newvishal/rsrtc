@@ -32,23 +32,25 @@ export class LoginComponent implements OnInit {
       if(checkToken){
         localStorage.removeItem('token');
       }
-      this._auth.authenticateUser(this.loginForm.value).subscribe(
-        res => {
+      this._auth.authenticateUser(this.loginForm.value).subscribe({
+        next: res =>{
           console.log(res);
           localStorage.setItem('token', res['data']['token']);
          
           this._router.navigate(['/dashboard']);
           this.toastr.successToastr(res['message']);
         },
-        (error) => {
-          console.log(error);
-          if (error.status === 401) {
-            this.toastr.warningToastr(error.error.message);
-          } else {
-            this.toastr.warningToastr('Somthing went wrong!!!');
-          }
-          console.log(error)
-        });
+        error: err =>{
+          console.log(err);
+          // console.log(typeof err);
+          this.toastr.warningToastr(err);
+          // if (err.status === 401) {
+          //   this.toastr.warningToastr(err.message);
+          // } else {
+          //   this.toastr.warningToastr('Somthing went wrong!!!');
+          // }
+        }
+      })
     }
 
   }
