@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      userName: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       this._auth.authenticateUser(this.loginForm.value).subscribe({
         next: res =>{
           console.log(res);
-          localStorage.setItem('token', res['data']['token']);
+          localStorage.setItem('token', res['data']);
          
           this._router.navigate(['/dashboard']);
           this.toastr.successToastr(res['message']);
