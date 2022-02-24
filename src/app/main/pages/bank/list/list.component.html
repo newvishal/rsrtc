@@ -30,9 +30,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>SBI</td>
-                                <td>SBINO</td>
+                            <tr *ngFor="let item of bankList">
+                                <td>{{item?.bankName}}</td>
+                                <td>{{item?.shortCode}}</td>
                                 <td class="btn-list">
                                     <a href="javascript:void(0)" class="btn btn-icon  btn-primary"> <i class="fe fe-edit"></i> </a>
                                     <a href="javascript:void(0)" class="btn btn-icon  btn-danger"> <i class="fe fe-delete"></i> </a>
