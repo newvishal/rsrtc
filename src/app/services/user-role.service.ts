@@ -9,7 +9,7 @@ import { IUserRole } from '../shared/ts';
   providedIn: 'root'
 })
 export class UserRoleService {
-  subject = new BehaviorSubject<any>( localStorage.getItem('details') || JSON.stringify({roleName: '', roleId: "", status: false }));
+  subject = new BehaviorSubject<any>( localStorage.getItem('details') || JSON.stringify({roleId: "", roleName: '', status: false }));
   
   httpOptions = {
     headers: new HttpHeaders({ 
@@ -21,13 +21,13 @@ export class UserRoleService {
 
   constructor(private http: HttpClient) { }
 
-  addUserRole(bank:IUserRole): Observable<IUserRole> {
-    return this.http.post<IUserRole>(environment.apiUrl + "api/UserRole", bank, this.httpOptions)
+  addUserRole(userRole:IUserRole): Observable<IUserRole> {
+    return this.http.post<IUserRole>(environment.apiUrl + "api/UserRole", userRole, this.httpOptions)
                     .pipe(catchError(this.handleError<IUserRole>(`addUserRole`)));
   }
 
-  put(bank:IUserRole, id: string): Observable<IUserRole> {
-    return this.http.put<IUserRole>(environment.apiUrl + `api/UserRole/${id}`, bank, this.httpOptions)
+  put(userRole:IUserRole, id: string): Observable<IUserRole> {
+    return this.http.put<IUserRole>(environment.apiUrl + `api/UserRole/${id}`, userRole, this.httpOptions)
                     .pipe(catchError(this.handleError<IUserRole>(`addUserRole`)));
   }
 

@@ -45,7 +45,7 @@ export class AddEditComponent implements OnInit {
       return;
     } else {
       if(this.bsubject.roleId) {
-        this.userRoleService.put({...this.userRoleForm.value, bankId: this.bsubject.roleId} as IUserRole, this.bsubject.roleId).subscribe({
+        this.userRoleService.put({...this.userRoleForm.value, roleId: this.bsubject.roleId} as IUserRole, this.bsubject.roleId).subscribe({
           next: res =>{
             this._router.navigate(["dashboard/role/"]);
             this.toastr.successToastr(res['message']);
