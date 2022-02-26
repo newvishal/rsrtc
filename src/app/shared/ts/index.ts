@@ -19,3 +19,9 @@ export interface IZone {
     shortCode: string,
     status ?: boolean
 }
+
+export interface IUserRole {
+    roleId ?: string,
+    roleName: string,
+    status ?: boolean
+}
