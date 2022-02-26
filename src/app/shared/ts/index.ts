@@ -23,5 +23,5 @@ export interface IZone {
 export interface IUserRole {
     roleId ?: string,
     roleName: string,
-    status ?: boolean
+    status: boolean
 }

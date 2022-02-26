@@ -22,7 +22,7 @@ export class UserRoleService {
   constructor(private http: HttpClient) { }
 
   addUserRole(bank:IUserRole): Observable<IUserRole> {
-    return this.http.post<IUserRole>(environment.apiUrl + "api//api/UserRole", bank, this.httpOptions)
+    return this.http.post<IUserRole>(environment.apiUrl + "api/UserRole", bank, this.httpOptions)
                     .pipe(catchError(this.handleError<IUserRole>(`addUserRole`)));
   }
 
