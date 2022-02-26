@@ -4,13 +4,13 @@ import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { retry, catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-import {IBank} from '../shared/ts';
+import {IZone} from '../shared/ts';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BankService {
-  subject = new BehaviorSubject<any>( localStorage.getItem('details') || JSON.stringify({bankName: '', bankId: "", shortCode: '', status: false }));
+export class ZoneService {
+  subject = new BehaviorSubject<any>( localStorage.getItem('details') || JSON.stringify({zoneId: '', zoneName: "", shortCode: '', status: false }));
 
   httpOptions = {
     headers: new HttpHeaders({ 
@@ -22,22 +22,22 @@ export class BankService {
 
   constructor(private http: HttpClient) { }
    
-  addBank(bank:IBank): Observable<IBank> {
-      return this.http.post<IBank>(environment.apiUrl + "api/Bank", bank, this.httpOptions)
-                      .pipe(catchError(this.handleError<IBank>(`addBank`)));
+  add(zone:IZone): Observable<IZone> {
+      return this.http.post<IZone>(environment.apiUrl + "api/Zone", zone, this.httpOptions)
+                      .pipe(catchError(this.handleError<IZone>(`addZone`)));
   }
 
-  put(bank:IBank, id: string): Observable<IBank> {
-    return this.http.put<IBank>(environment.apiUrl + `api/Bank/${id}`, bank, this.httpOptions)
-                    .pipe(catchError(this.handleError<IBank>(`addBank`)));
+  put(zone:IZone, id: string): Observable<IZone> {
+    return this.http.put<IZone>(environment.apiUrl + `api/Zone/${id}`, zone, this.httpOptions)
+                    .pipe(catchError(this.handleError<IZone>(`updateZone`)));
   }
 
-  getAllBank(): Observable<IBank[]> {
-      return this.http.get<IBank[]>(environment.apiUrl + "api/Bank", this.httpOptions)
-                      .pipe(catchError(this.handleError<IBank[]>('getAllBank', [])));
+  find(): Observable<IZone[]> {
+      return this.http.get<IZone[]>(environment.apiUrl + "api/Zone", this.httpOptions)
+                      .pipe(catchError(this.handleError<IZone[]>('getAllZone', [])));
   }
 
-  saveBankById(detail : IBank) {
+  saveDetails(detail : IZone) {
     localStorage.setItem('details', JSON.stringify(detail));
     this.subject.next(detail);
   }

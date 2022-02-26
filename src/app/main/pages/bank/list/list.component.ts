@@ -6,6 +6,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 
 import {IBank} from '../../../../shared/ts'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -13,24 +14,20 @@ import {IBank} from '../../../../shared/ts'
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'bankName', 'shortCode'];
+  displayedColumns: string[] = ['bankId', 'bankName', 'shortCode', 'status', 'actions'];
   dataSource: MatTableDataSource<IBank>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  bankList: Array<any> = [];
-  constructor(public bankService: BankService) { }
-
+  constructor(public bankService: BankService, public route: Router) { }
+  loadingBanks: boolean = false;
   ngOnInit(): void {
-    // this.getAllBank();
-    const banks: IBank = {id: '1', bankName: 'test', shortCode: 'BSC'};
-
-    this.dataSource = new MatTableDataSource([banks]);
+    this.getBanks();
   }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    // this.dataSource.paginator = this.paginator;
+    // this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {
@@ -42,16 +39,24 @@ export class ListComponent implements OnInit {
     }
   }
 
-  getAllBank(){
-     this.bankService.getAllBank().subscribe({
-       next: res =>{
-          console.log(res['data']);
-          this.bankList = res['data'];
-       },
-       error: err =>{
-          console.log(err);
-       }
-     });
+  getBanks(){
+    this.loadingBanks = true;
+    this.bankService.getAllBank().subscribe((res: IBank[]) => {
+      const Bank = res['data'] as IBank[];
+      this.dataSource = new MatTableDataSource(Bank);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      this.loadingBanks = false;
+    }, (err) => {
+      console.log(err)
+    });
+
+  }
+
+  EditBank(detail: IBank) {
+    console.log(detail)
+    this.bankService.saveBankById(detail);
+    this.route.navigate(['dashboard/bank/addEditBank'])
   }
 
 }
