@@ -50,6 +50,8 @@ export class AddEditComponent implements OnInit {
           next: res =>{
             this._router.navigate(["dashboard/bank/"]);
             this.toastr.successToastr(res['message']);
+            localStorage.removeItem('details');
+            this.bankService.saveBankById({bankName: '', bankId: "", shortCode: '', status: false })
           },
           error: err =>{
             console.log(err);

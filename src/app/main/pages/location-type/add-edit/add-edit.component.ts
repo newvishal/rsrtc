@@ -51,6 +51,8 @@ export class AddEditComponent implements OnInit {
           next: res =>{
             this._router.navigate(["dashboard/location-type/"]);
             this.toastr.successToastr(res['message']);
+            localStorage.removeItem('details');
+            this.locationTypeService.saveDetails({locationTypeId: '', locationType: "", shortCode: '', status: false })
           },
           error: err =>{
             console.log(err);

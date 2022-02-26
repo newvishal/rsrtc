@@ -49,6 +49,8 @@ export class AddEditComponent implements OnInit {
           next: res =>{
             this._router.navigate(["dashboard/role/"]);
             this.toastr.successToastr(res['message']);
+            localStorage.removeItem('details');
+            this.userRoleService.saveUserRoleById({roleId: "", roleName: '', status: false })
           },
           error: err =>{
             console.log(err);

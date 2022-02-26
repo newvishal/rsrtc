@@ -50,6 +50,8 @@ export class AddEditComponent implements OnInit {
           next: res =>{
             this._router.navigate(["dashboard/designation/"]);
             this.toastr.successToastr(res['message']);
+            localStorage.removeItem('details');
+            this.designationService.saveDetails({designationId: '', designationType: "", designationName: '', shortCode: "", status: false })
           },
           error: err =>{
             console.log(err);

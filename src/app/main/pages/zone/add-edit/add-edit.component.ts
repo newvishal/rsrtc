@@ -48,6 +48,8 @@ export class AddEditComponent implements OnInit {
           next: res =>{
             this._router.navigate(["dashboard/zone/"]);
             this.toastr.successToastr(res['message']);
+            localStorage.removeItem('details');
+            this.zoneService.saveDetails({zoneId: '', zoneName: "", shortCode: '', status: false })
           },
           error: err =>{
             console.log(err);
