@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ListComponent } from './list/list.component';
 import { AddEditComponent } from './add-edit/add-edit.component';
+import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -24,6 +26,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ZoneModule { }
