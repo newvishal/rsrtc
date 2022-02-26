@@ -25,3 +25,10 @@ export interface IUserRole {
     roleName: string,
     status ?: boolean
 }
+
+export interface ILocationType {
+    locationTypeId ?: string,
+    locationType: string,
+    shortCode: string,
+    status ?: boolean
+}

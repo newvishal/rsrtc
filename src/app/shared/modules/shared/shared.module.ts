@@ -23,7 +23,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    ReactiveFormsModule
   ],
-  exports: [MatProgressSpinnerModule,MatTooltipModule,MatIconModule, MatFormFieldModule, MatTableModule, MatPaginatorModule, MatInputModule, MatSortModule, MatCheckboxModule]
+  exports: [ReactiveFormsModule, MatProgressSpinnerModule,MatTooltipModule,MatIconModule, MatFormFieldModule, MatTableModule, MatPaginatorModule, MatInputModule, MatSortModule, MatCheckboxModule]
 })
 export class SharedModule { }
