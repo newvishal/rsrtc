@@ -1,0 +1,47 @@
+<!-- PAGE-HEADER -->
+<div class="page-header">
+    <ol class="breadcrumb"><!-- breadcrumb -->
+        <li class="breadcrumb-item"><a href="#">Add Edit Leave Reason Type</a></li>
+        <!-- <li class="breadcrumb-item active" aria-current="page">Form Elements</li> -->
+    </ol>
+</div>
+<!-- PAGE-HEADER END -->
+
+<!-- ROW-1 OPEN -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="LeaveReasonTypeForm" (ngSubmit)="addLeaveReasonType()">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Reason type</label>
+                                <select [ngClass]="{ 'is-invalid': submitted && myForm['reasonType'].errors }" name="stateddl" formControlName="reasonType" id="" class="form-control">
+                                    <option value="br" >1</option>
+                                    <option value="cz" >2</option>
+                                    <option value="de" >3</option>
+                                    <option value="pl">4</option>
+                                </select>
+                                <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['reasonType'].errors?.['required']">Please
+                                    Enter Reason Type</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Short code</label>
+                                <input type="text" formControlName="shortCode" class="form-control" name="example-text-input" placeholder="eg: UP50...">
+                                <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['shortCode'].errors?.['required']">Please
+                                    Enter Short Code</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" value="Submit" class="btn btn-primary float-right">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ROW-1 CLOSED -->

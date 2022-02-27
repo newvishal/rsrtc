@@ -61,6 +61,11 @@ const routes: Routes = [
         loadChildren: () =>
           import("./pages/month/month.module").then((m) => m.MonthModule)
       },
+      {
+        path: "LeaveReason",
+        loadChildren: () =>
+          import("./pages/leave-reason-type/leave-reason-type.module").then((m) => m.LeaveReasonTypeModule)
+      },
     ]
   }
 ];
