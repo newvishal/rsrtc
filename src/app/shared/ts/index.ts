@@ -39,3 +39,18 @@ export interface ILeaveReasonType {
     shortCode: string,
     status ?: boolean
 }
+
+export interface IHRA {
+    hraId ?: string,
+    hraValue: string,
+    status ?: boolean
+}
+
+
+export interface ISection {
+    sectionId ?: string,
+    sectionName: string,
+    shortCode: string,
+    status ?: boolean
+}
+
