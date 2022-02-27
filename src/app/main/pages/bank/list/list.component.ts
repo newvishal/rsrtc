@@ -2,8 +2,8 @@ import { Component, OnInit, AfterViewInit, ViewChild  } from '@angular/core';
 import { BankService } from 'src/app/services/bank.service';
 import { Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatSort} from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 import {IBank} from '../../../../shared/ts';
 

@@ -62,10 +62,30 @@ const routes: Routes = [
           import("./pages/month/month.module").then((m) => m.MonthModule)
       },
       {
-        path: "LeaveReason",
+        path: "LeaveReasonType",
         loadChildren: () =>
           import("./pages/leave-reason-type/leave-reason-type.module").then((m) => m.LeaveReasonTypeModule)
       },
+      {
+        path: "employee",
+        loadChildren: () =>
+          import("./pages/employee/employee.module").then((m) => m.EmployeeModule)
+      },
+      {
+        path: "leave-limit",
+        loadChildren: () =>
+          import("./pages/leave-limit/leave-limit.module").then((m) => m.LeaveLimitModule)
+      },
+      {
+        path: "leave-type",
+        loadChildren: () =>
+          import("./pages/leave-type/leave-type.module").then((m) => m.LeaveTypeModule)
+      },
+      {
+        path: "location",
+        loadChildren: () =>
+          import("./pages/location/location.module").then((m) => m.LocationModule)
+      }
     ]
   }
 ];
