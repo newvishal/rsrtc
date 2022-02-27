@@ -32,3 +32,10 @@ export interface ILocationType {
     shortCode: string,
     status ?: boolean
 }
+
+export interface ILeaveReasonType {
+    leaveReasonTypeId ?: string,
+    reasonType: string,
+    shortCode: string,
+    status ?: boolean
+}
