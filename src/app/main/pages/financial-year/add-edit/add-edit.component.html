@@ -14,40 +14,44 @@
             <!-- <div class="card-header">
                 <h3 class="mb-0 card-title">Default forms</h3>
             </div> -->
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">Financial year</label>
-                            <select name="stateddl" id="" class="form-control">
-                                <option value="br" selected>2021</option>
-                                <option value="cz" >2020</option>
-                            </select>
+            <form [formGroup]="FYForm" (ngSubmit)="addFY()">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Financial year</label>
+                                <select formControlName="financialYear" [ngClass]="{ 'is-invalid': submitted && myForm['financialYear'].errors }" name="stateddl" id="" class="form-control">
+                                    <option value="21" selected>2021</option>
+                                    <option value="20" >2020</option>
+                                </select>
+                                <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['financialYear'].errors?.['required']">Please
+                                    Select Financial year</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Short Code</label>
+                                <input type="text" formControlName="shortCode" class="form-control" name="example-text-input" placeholder="eg: UP50...">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">From</label>
+                                <input type="date"  formControlName="fyFrom" class="form-control" name="example-text-input" placeholder="eg: UP50...">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">To</label>
+                                <input type="date" formControlName="fyTo" class="form-control" name="example-text-input" placeholder="eg: UP50...">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">Short Code</label>
-                            <input type="text" class="form-control" name="example-text-input" placeholder="eg: UP50...">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">From</label>
-                            <input type="date" class="form-control" name="example-text-input" placeholder="eg: UP50...">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">To</label>
-                            <input type="date" class="form-control" name="example-text-input" placeholder="eg: UP50...">
-                        </div>
+                    <div class="col-md-12">
+                        <input type="submit" value="Submit" class="btn btn-primary float-right">
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <input type="submit" value="Submit" class="btn btn-primary float-right">
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

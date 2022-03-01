@@ -45,13 +45,15 @@ export class AddEditComponent implements OnInit {
     if (this.DistrictForm.invalid) {
       return;
     } else {
+      const {districtName, shortCode, districtId, zoneId} = this.DistrictForm.value as IDistrict;
       if(this.bsubject.districtId) {
-        this.districtService.put({...this.DistrictForm.value, districtId: this.bsubject.districtId} as IDistrict, this.bsubject.districtId).subscribe({
+       
+        this.districtService.put({...this.DistrictForm.value, districtId: this.bsubject.districtId, zoneId} as IDistrict, this.bsubject.districtId).subscribe({
           next: res =>{
             this._router.navigate(["dashboard/district/"]);
             this.toastr.successToastr(res['message']);
             localStorage.removeItem('details');
-            this.districtService.saveDetails({districtId: '', zoneId: "", districtName: '', shortCode: "", status: false })
+            this.districtService.saveDetails({districtId: '', zoneId: 0, districtName: '', shortCode: "", status: false })
           },
           error: err =>{
             console.log(err);
@@ -60,7 +62,7 @@ export class AddEditComponent implements OnInit {
         })
         return
       }
-      this.districtService.add({...this.DistrictForm.value} as IDistrict).subscribe({
+      this.districtService.add({districtName, shortCode, zoneId}).subscribe({
         next: res =>{
           this._router.navigate(["dashboard/district/"]);
           this.toastr.successToastr(res['message']);

@@ -21,10 +21,10 @@
                                 <div class="form-group">
                                     <label class="form-label">Zone</label>
                                     <select [ngClass]="{ 'is-invalid': submitted && myForm['zoneId'].errors }" formControlName="zoneId" name="stateddl" id="" class="form-control">
-                                        <option value="br">1</option>
-                                        <option value="cz" >2</option>
-                                        <option value="de" >3</option>
-                                        <option value="pl">4</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
                                     </select>
                                     <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['zoneId'].errors?.['required']">Please
                                         Select Zone Name</small>
