@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 
-import {IDesignation} from '../../../../shared/ts'
+import { IDesignation } from '../../../../shared/ts'
 import { Router } from '@angular/router';
 
 @Component({
