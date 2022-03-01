@@ -54,3 +54,66 @@ export interface ISection {
     status ?: boolean
 }
 
+
+// ----------------------------------------- start date 01-22 -------------------------------------------------------------------
+
+export interface IDistrict {
+    districtId ?: string,
+    zoneId ?: string,
+    districtName: string,
+    shortCode: string,
+    status ?: boolean
+}
+
+export interface IFinancialYear {
+    fyId ?: string,
+    financialYear : string,
+    shortCode ?: string,
+    fyFrom ?: string,
+    fyTo ?: string,
+    status ?: boolean
+}
+
+export interface IMonth {
+    monthId ?: string,
+    fyId : number,
+    monthName : string,
+    attendanceStatus ?: boolean,
+    salaryStatus ?: boolean,
+    userId: number,
+    status ?: boolean
+}
+
+
+export interface ILeaveLimit {
+    empLeaveApplicableId ?: string,
+    leaveTypeId : number,
+    empTypeId : number,
+    perMonthLeaveAllowed ?: number,
+    maxLeaveAllowed ?: number,
+    carryForwardMaxLimit ?: number,
+    status ?: boolean
+}
+
+export interface ILeaveType {
+    leaveTypeId ?: string,
+    leaveTypeName : string,
+    genderApplicable ?: number,
+    carryForwardStatus ?: boolean,
+    shortCode ?: string,
+    status ?: boolean
+}
+
+export interface ILocation {
+    locationId ?: string,
+    zoneId : number,
+    districtId : number,
+    locationTypeId : number,
+    locationName : string,
+    shortCode : string,
+    hra : string,
+    ccaStatus : boolean,
+    cccAmount : number,
+    status ?: boolean
+}
+
