@@ -11,51 +11,63 @@
 <div class="row">
     <div class="col-md-8">
         <div class="card">
-            <!-- <div class="card-header">
-                <h3 class="mb-0 card-title">Default forms</h3>
-            </div> -->
+
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">Financial year</label>
-                            <select name="stateddl" id="" class="form-control">
-                                <option value="br" selected>2021</option>
-                                <option value="cz" >2020</option>
-                            </select>
+                <form [formGroup]="MonthForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Financial year</label>
+                                <select [ngClass]="{ 'is-invalid': submitted && myForm['fyId'].errors }" formControlName="fyId" name="FY" id="" class="form-control">
+                                    <option [value]="item.fyId"  *ngFor="let item of FYList">{{item.financialYear}}-{{item.shortCode}}</option>
+                                </select>
+                                <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['fyId'].errors?.['required']">Please
+                                    Select Financial year</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Month</label>
+                                <select [ngClass]="{ 'is-invalid': submitted && myForm['monthNo'].errors }" formControlName="monthNo" name="month" id="" class="form-control">
+                                    <option [value]="item.key" *ngFor="let item of MonthList | keyvalue" >{{item.value}}</option>
+                                </select>
+                                <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['monthNo'].errors?.['required']">Please
+                                    Select Month Name</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Attendance Status</label>
+                                <select [ngClass]="{ 'is-invalid': submitted && myForm['attendanceStatus'].errors }" formControlName="attendanceStatus" name="stateddl" id="" class="form-control">
+                                    <option value="true" >Yes</option>
+                                    <option value="false" >No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Salary Status</label>
+                                <select [ngClass]="{ 'is-invalid': submitted && myForm['salaryStatus'].errors }" formControlName="salaryStatus" name="stateddl" id="" class="form-control">
+                                    <option value="true" >Yes</option>
+                                    <option value="false" >No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">User</label>
+                                <select [ngClass]="{ 'is-invalid': submitted && myForm['userId'].errors }" formControlName="userId" name="userid" id="" class="form-control">
+                                    <option value="1" >User 1</option>
+                                </select>
+                                <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['userId'].errors?.['required']">Please
+                                    Select User Name</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">Moth</label>
-                            <select name="stateddl" id="" class="form-control">
-                                <option value="br" selected>Jan</option>
-                                <option value="cz" >Feb</option>
-                            </select>
-                        </div>
+                    <div class="col-md-12">
+                        <input type="submit" value="Submit" class="btn btn-primary float-right">
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">Attendance Status</label>
-                            <select name="stateddl" id="" class="form-control">
-                                <option value="br" selected>Yes</option>
-                                <option value="cz" >No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">Salary Status</label>
-                            <select name="stateddl" id="" class="form-control">
-                                <option value="br" selected>Yes</option>
-                                <option value="cz" >No</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <input type="submit" value="Submit" class="btn btn-primary float-right">
-                </div>
+                </form>
             </div>
         </div>
     </div>

@@ -78,6 +78,7 @@ export interface IMonth {
     monthId ?: string,
     fyId : number,
     monthName : string,
+    monthNo ?: Number,
     attendanceStatus ?: boolean,
     salaryStatus ?: boolean,
     userId: number,

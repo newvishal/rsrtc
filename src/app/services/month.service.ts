@@ -11,7 +11,18 @@ import {IMonth} from '../shared/ts';
   providedIn: 'root'
 })
 export class MonthService {
-  subject = new BehaviorSubject<any>( localStorage.getItem('details') || JSON.stringify({districtId: '', zoneId: "", districtName: '', shortCode: "", status: false }));
+  subject = new BehaviorSubject<any>( 
+    localStorage.getItem('details') || 
+    JSON.stringify({
+      monthId: '', 
+      fyId: 0, 
+      monthName: '',
+      monthNo: 0,
+      attendanceStatus: false,
+      salaryStatus: false,
+      userId: 0,
+      status: false
+    }));
 
   httpOptions = {
     headers: new HttpHeaders({ 
