@@ -63,7 +63,7 @@ export class AddEditComponent implements OnInit {
     })
   }
 
-    patchLocalStorageData() {
+  patchLocalStorageData() {
     this.monthServ.subject.subscribe(res => {
       if(typeof res == 'string') {
          this.bsubject = JSON.parse(res);
@@ -76,7 +76,7 @@ export class AddEditComponent implements OnInit {
   
   get myForm() { return this.MonthForm.controls; }
 
-  addDistrict() {
+  addMonth() {
     this.submitted = true;
     if (this.MonthForm.invalid) {
       return;
@@ -84,8 +84,8 @@ export class AddEditComponent implements OnInit {
       if(this.bsubject.monthId) {
         this.monthServ.put({...this.MonthForm.value, monthName: this.MonthList[this.MonthForm.value['monthNo']]} as IMonth, this.bsubject.monthId).subscribe({
           next: res =>{
-            this._router.navigate(["dashboard/district/"]);
             this.toastr.successToastr(res['message']);
+            this._router.navigate(["dashboard/month/"]);
             localStorage.removeItem('details');
             this.monthServ.saveDetails({
               monthId: '', 
@@ -107,7 +107,7 @@ export class AddEditComponent implements OnInit {
       }
       this.monthServ.add({...this.MonthForm.value, monthName: this.MonthList[this.MonthForm.value['monthNo']]}).subscribe({
         next: res =>{
-          this._router.navigate(["dashboard/district/"]);
+          this._router.navigate(["dashboard/month/"]);
           this.toastr.successToastr(res['message']);
         },
         error: err =>{

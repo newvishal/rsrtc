@@ -13,7 +13,7 @@
         <div class="card">
 
             <div class="card-body">
-                <form [formGroup]="MonthForm">
+                <form [formGroup]="MonthForm"  (ngSubmit)="addMonth()">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
