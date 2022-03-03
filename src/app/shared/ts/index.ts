@@ -99,7 +99,7 @@ export interface ILeaveLimit {
 export interface ILeaveType {
     leaveTypeId ?: string,
     leaveTypeName : string,
-    genderApplicable ?: number,
+    genderApplicable ?: number ,
     carryForwardStatus ?: boolean,
     shortCode ?: string,
     status ?: boolean
