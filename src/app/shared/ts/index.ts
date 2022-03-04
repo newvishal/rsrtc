@@ -112,7 +112,7 @@ export interface ILocation {
     locationTypeId : number,
     locationName : string,
     shortCode : string,
-    hra : string,
+    hra : number,
     ccaStatus : boolean,
     cccAmount : number,
     status ?: boolean
