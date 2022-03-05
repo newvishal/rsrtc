@@ -5,8 +5,6 @@
         <!-- <li class="breadcrumb-item active" aria-current="page">Form Elements</li> -->
     </ol>
 </div>
-<!-- PAGE-HEADER END -->
-
 <!-- ROW-1 OPEN -->
 <div class="row">
     <div class="col-md-12">
@@ -18,7 +16,7 @@
                             <div class="form-group">
                                 <label class="form-label">Zone</label>
                                 <select formControlName="zoneId" [ngClass]="{ 'is-invalid': submitted && myForm['zoneId']?.errors }" name="stateddl" id="" class="form-control">
-                                    <option value="1" >1</option>
+                                    <option [value]="item.hraId" *ngFor="let item of HRAList">{{item.hraValue}}</option>
                                 </select>
                                 <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['zoneId'].errors?.['required']">Please
                                     Select Zone Name</small>
@@ -28,7 +26,7 @@
                             <div class="form-group">
                                 <label class="form-label">District </label>
                                 <select formControlName="districtId" [ngClass]="{ 'is-invalid': submitted && myForm['districtId']?.errors }" name="stateddl" id="" class="form-control">
-                                    <option value="1" >1</option>
+                                    <option [value]="item.districtId" *ngFor="let item of DistrictList">{{item.districtName}}</option>
                                 </select>
                                 <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['districtId'].errors?.['required']">Please
                                     Select District Name</small>
@@ -38,7 +36,7 @@
                             <div class="form-group">
                                 <label class="form-label">Location type </label>
                                 <select formControlName="locationTypeId" [ngClass]="{ 'is-invalid': submitted && myForm['locationTypeId']?.errors }" name="stateddl" id="" class="form-control">
-                                    <option value="1" >1</option>
+                                    <option [value]="item.locationTypeId" *ngFor="let item of LocationTypeList">{{item.locationType}}</option>
                                 </select>
                                 <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['locationTypeId'].errors?.['required']">Please
                                     Select Location Type Name</small>
@@ -64,7 +62,7 @@
                             <div class="form-group">
                                 <label class="form-label">HRA</label>
                                 <select formControlName="hra" [ngClass]="{ 'is-invalid': submitted && myForm['hra']?.errors }" name="stateddl" id="" class="form-control">
-                                    <option value="1" >1</option>
+                                    <option [value]="item.hraId" *ngFor="let item of HRAList">{{item.hraValue}}</option>
                                 </select>
                                 <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['hra'].errors?.['required']">Please
                                     Enter HRA</small>

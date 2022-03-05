@@ -24,103 +24,84 @@
                                     <div class="col-sm-3">
                                         <mat-form-field appearance="outline">
                                         <mat-label>Name </mat-label>
-                                        <input matInput formControlName="name">
+                                        <input matInput formControlName="employeeName">
                                         </mat-form-field>
                                         <!-- <mat-error *ngIf="basicInfo.controls.name.invalid && (basicInfo.controls.name.dirty || basicInfo.controls.name.touched)">Name Is Required</mat-error> -->
                                     </div>
                                     <div class="col-sm-3">
                                         <mat-form-field appearance="outline">
                                         <mat-label>Father Name</mat-label>
-                                            <input matInput min="1" formControlName="campusSize">
+                                            <input matInput min="1" formControlName="fatherName">
                                         </mat-form-field>
                                         <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
                                         <!-- <mat-error *ngIf="basicInfo.controls.campusSize.touched && basicInfo.controls.campusSize.errors?.required">Campus Size Is Required</mat-error> -->
                                     </div>
                                     <div class="col-sm-3">
-                                        <mat-form-field appearance="outline">
-                                        <mat-label>Gender</mat-label>
-                                        <mat-select>
-                                            <mat-option value="">Select</mat-option>
-                                            <mat-option >Male</mat-option>
-                                            <mat-option >Female</mat-option>
-                                        </mat-select>
-                                        </mat-form-field>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <mat-form-field appearance="outline">
-                                        <mat-label>Dob</mat-label>
-                                        <input matInput type="date"  formControlName="studentFacultyRatio">
-                                        <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
-                                        </mat-form-field>
-                                        <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
-                                        <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.touched && basicInfo.controls.studentFacultyRatio.errors?.required"> Student Faculty Ratio Is Required</mat-error> -->
-                                    </div>
-                                </div>
-                                <div class="row mt-3">                               
-                                  <div class="col-sm-3">
                                       <mat-form-field appearance="outline">
-                                      <mat-label>Mobile No </mat-label>
-                                      <input matInput>
-                                      </mat-form-field>
-                                      <!-- <mat-error *ngIf="basicInfo.controls.name.invalid && (basicInfo.controls.name.dirty || basicInfo.controls.name.touched)">Name Is Required</mat-error> -->
-                                  </div>
-                                  <div class="col-sm-3">
-                                      <mat-form-field appearance="outline">
-                                      <mat-label>Email Id</mat-label>
-                                          <input matInput>
-                                      </mat-form-field>
-                                      <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
-                                      <!-- <mat-error *ngIf="basicInfo.controls.campusSize.touched && basicInfo.controls.campusSize.errors?.required">Campus Size Is Required</mat-error> -->
-                                  </div>
-                                  <div class="col-sm-3">
-                                    <mat-form-field appearance="outline">
-                                    <mat-label>Official Email Id</mat-label>
-                                        <input matInput>
-                                    </mat-form-field>
-                                    <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
-                                    <!-- <mat-error *ngIf="basicInfo.controls.campusSize.touched && basicInfo.controls.campusSize.errors?.required">Campus Size Is Required</mat-error> -->
-                                  </div>
-                                  <div class="col-sm-3">
-                                      <mat-form-field appearance="outline">
-                                      <mat-label>Whatsapp No.</mat-label>
-                                      <input matInput>
+                                      <mat-label>Dob</mat-label>
+                                      <input matInput type="date"  formControlName="dob">
                                       <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                       </mat-form-field>
                                       <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
                                       <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.touched && basicInfo.controls.studentFacultyRatio.errors?.required"> Student Faculty Ratio Is Required</mat-error> -->
-                                  </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <mat-form-field appearance="outline">
+                                        <mat-label>Mobile No </mat-label>
+                                        <input type="number" formControlName="mobile" matInput>
+                                        </mat-form-field>
+                                        <!-- <mat-error *ngIf="basicInfo.controls.name.invalid && (basicInfo.controls.name.dirty || basicInfo.controls.name.touched)">Name Is Required</mat-error> -->
+                                    </div>
                                 </div>
-                                <div class="row mt-3">   
+                                <div class="row mt-3"> 
                                   <div class="col-sm-3">
                                     <mat-form-field appearance="outline">
-                                    <mat-label>Designation</mat-label>
-                                    <mat-select>
+                                      <mat-label>Email Id</mat-label>
+                                          <input type="text" formControlName="emailID" matInput>
+                                      </mat-form-field>
+                                      <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
+                                      <!-- <mat-error *ngIf="basicInfo.controls.campusSize.touched && basicInfo.controls.campusSize.errors?.required">Campus Size Is Required</mat-error> -->
+                                  </div>                              
+                                  <div class="col-sm-3">
+                                    <mat-form-field appearance="outline">
+                                      <mat-label>Location Type</mat-label>
+                                      <mat-select formControlName="locationType">
+                                          <mat-option value="">Select</mat-option>
+                                      </mat-select>
+                                      </mat-form-field>
+                                  </div>
+                                  <div class="col-sm-3">
+                                    <mat-form-field appearance="outline">
+                                      <mat-label>Zone</mat-label>
+                                      <mat-select formControlName="zoneId">
+                                          <mat-option value="">Select</mat-option>
+                                      </mat-select>
+                                      </mat-form-field>
+                                  </div>
+                                  <div class="col-sm-3">
+                                    <mat-form-field appearance="outline">
+                                    <mat-label>District</mat-label>
+                                    <mat-select formControlName="districtId">
                                       <mat-option value="">Select</mat-option>
-                                      <mat-option >Manager</mat-option>
-                                      <mat-option >HR</mat-option>
                                     </mat-select>
                                     </mat-form-field>
                                     <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
                                     <!-- <mat-error *ngIf="basicInfo.controls.campusSize.touched && basicInfo.controls.campusSize.errors?.required">Campus Size Is Required</mat-error> -->
-                                  </div>                            
-                                  <div class="col-sm-3">
-                                      <mat-form-field appearance="outline">
-                                      <mat-label>Address</mat-label>
-                                      <textarea matInput placeholder="Enter Your Address" style="resize: none;"></textarea>
-                                      </mat-form-field>
-                                      <!-- <mat-error *ngIf="basicInfo.controls.name.invalid && (basicInfo.controls.name.dirty || basicInfo.controls.name.touched)">Name Is Required</mat-error> -->
-                                  </div>
+                                  </div> 
+                                </div>
+                                <div class="row mt-3">   
                                   <div class="col-sm-3">
                                     <mat-form-field appearance="outline">
-                                    <mat-label>Address2</mat-label>
-                                    <textarea matInput placeholder="Enter Your Address" style="resize: none;"></textarea>
-                                    </mat-form-field>
-                                    <!-- <mat-error *ngIf="basicInfo.controls.name.invalid && (basicInfo.controls.name.dirty || basicInfo.controls.name.touched)">Name Is Required</mat-error> -->
-                                  </div>
+                                      <mat-label>Employee Type</mat-label>
+                                      <mat-select formControlName="empType">
+                                        <mat-option value="">Select</mat-option>
+                                      </mat-select>
+                                    </mat-form-field> 
+                                  </div>  
                                   <div class="col-sm-3">
                                     <mat-form-field appearance="outline">
-                                    <mat-label>State</mat-label>
-                                    <mat-select>
+                                    <mat-label>Location</mat-label>
+                                    <mat-select formControlName="locationId">
                                       <mat-option value="">Select</mat-option>
                                       <mat-option >UP</mat-option>
                                       <mat-option >MP</mat-option>
@@ -128,100 +109,13 @@
                                     </mat-form-field>
                                     <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
                                     <!-- <mat-error *ngIf="basicInfo.controls.campusSize.touched && basicInfo.controls.campusSize.errors?.required">Campus Size Is Required</mat-error> -->
-                                  </div>
-                                </div>
-                                <div class="row mt-3">  
-                                  <div class="col-sm-3">
-                                    <mat-form-field appearance="outline">
-                                      <mat-label>District</mat-label>
-                                      <mat-select>
-                                        <mat-option value="">Select</mat-option>
-                                        <mat-option >UP</mat-option>
-                                        <mat-option >MP</mat-option>
-                                      </mat-select>
-                                    </mat-form-field> 
-                                  </div>                             
+                                  </div>                      
                                   <div class="col-sm-3">
                                       <mat-form-field appearance="outline">
-                                      <mat-label>Pincode</mat-label>
-                                      <input matInput>
+                                      <mat-label>Address</mat-label>
+                                      <textarea formControlName="address" matInput placeholder="Enter Your Address" style="resize: none;"></textarea>
                                       </mat-form-field>
                                       <!-- <mat-error *ngIf="basicInfo.controls.name.invalid && (basicInfo.controls.name.dirty || basicInfo.controls.name.touched)">Name Is Required</mat-error> -->
-                                  </div>
-                                  <div class="col-sm-3">
-                                      <mat-form-field appearance="outline">
-                                      <mat-label>ESI Number</mat-label>
-                                          <input matInput>
-                                      </mat-form-field>
-                                      <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
-                                      <!-- <mat-error *ngIf="basicInfo.controls.campusSize.touched && basicInfo.controls.campusSize.errors?.required">Campus Size Is Required</mat-error> -->
-                                  </div>
-                                  <div class="col-sm-3">
-                                    <mat-form-field appearance="outline">
-                                    <mat-label>EPF Number</mat-label>
-                                        <input matInput>
-                                    </mat-form-field>
-                                    <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
-                                    <!-- <mat-error *ngIf="basicInfo.controls.campusSize.touched && basicInfo.controls.campusSize.errors?.required">Campus Size Is Required</mat-error> -->
-                                  </div>
-                                </div>
-                                <div class="row mt-3"> 
-                                  
-                                  <div class="col-sm-3">
-                                    <mat-form-field appearance="outline">
-                                    <mat-label>Pan Number</mat-label>
-                                    <input matInput>
-                                    <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
-                                    </mat-form-field>
-                                    <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
-                                    <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.touched && basicInfo.controls.studentFacultyRatio.errors?.required"> Student Faculty Ratio Is Required</mat-error> -->
-                                  </div>  
-                                  <div class="col-sm-3">
-                                    <mat-form-field appearance="outline">
-                                    <mat-label>Aadhar Number</mat-label>
-                                    <input matInput>
-                                    <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
-                                    </mat-form-field>
-                                    <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
-                                    <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.touched && basicInfo.controls.studentFacultyRatio.errors?.required"> Student Faculty Ratio Is Required</mat-error> -->
-                                  </div>                                
-                                  <div class="col-sm-3">
-                                      <mat-form-field appearance="outline">
-                                      <mat-label>Bank Name</mat-label>
-                                      <input matInput>
-                                      </mat-form-field>
-                                      <!-- <mat-error *ngIf="basicInfo.controls.name.invalid && (basicInfo.controls.name.dirty || basicInfo.controls.name.touched)">Name Is Required</mat-error> -->
-                                  </div>
-                                  <div class="col-sm-3">
-                                      <mat-form-field appearance="outline">
-                                      <mat-label>IFSC</mat-label>
-                                          <input matInput>
-                                      </mat-form-field>
-                                      <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
-                                      <!-- <mat-error *ngIf="basicInfo.controls.campusSize.touched && basicInfo.controls.campusSize.errors?.required">Campus Size Is Required</mat-error> -->
-                                  </div>
-                                  <div class="col-sm-3">
-                                    <mat-form-field appearance="outline">
-                                    <mat-label>Account Number</mat-label>
-                                        <input matInput>
-                                    </mat-form-field>
-                                    <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
-                                    <!-- <mat-error *ngIf="basicInfo.controls.campusSize.touched && basicInfo.controls.campusSize.errors?.required">Campus Size Is Required</mat-error> -->
-                                  </div>
-                                  <div class="col-sm-3">
-                                    <mat-form-field appearance="outline">
-                                      <mat-label *ngIf="selectedFiles; else newFile">{{selectedFiles.item(0).name}}</mat-label>
-                                      <ng-template #newFile >
-                                          <mat-label>Choose file</mat-label>
-                                      </ng-template>
-                                      <input matInput disabled >
-                                      <button mat-icon-button matSuffix (click)="fileInput.click()">
-                                          <mat-icon>attach_file</mat-icon>
-                                      </button>
-                                      <input hidden (change)="selectFile($event)" #fileInput type="file" id="file">
-                                    </mat-form-field>
-                                      <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
-                                      <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.touched && basicInfo.controls.studentFacultyRatio.errors?.required"> Student Faculty Ratio Is Required</mat-error> -->
                                   </div>
                                 </div>
                                 <div class="col-lg-12 mt-3">
@@ -234,8 +128,8 @@
                             <div class="row mt-3">
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Date of joining</mat-label>
-                                <input matInput type="date">
+                                <mat-label>Account No.</mat-label>
+                                <input matInput type="date" formControlName="accountNo">
                                 <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                                 <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
@@ -243,80 +137,161 @@
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Joining State</mat-label>
-                                <mat-select>
-                                    <mat-option value="">Select</mat-option>
-                                    <mat-option >Male</mat-option>
-                                    <mat-option >Female</mat-option>
-                                </mat-select>
+                                <mat-label>Year of Posting</mat-label>
+                                <input matInput type="date" formControlName="yearOfPosting">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
+                                <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
+                                <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.touched && basicInfo.controls.studentFacultyRatio.errors?.required"> Student Faculty Ratio Is Required</mat-error> -->
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Location Type</mat-label>
-                                <mat-select>
-                                    <mat-option value="">Select</mat-option>
-                                    <mat-option >Male</mat-option>
-                                    <mat-option >Female</mat-option>
-                                </mat-select>
+                                <mat-label>Aadhar</mat-label>
+                                <input matInput type="date" formControlName="adhar">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
+                                <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
+                                <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.touched && basicInfo.controls.studentFacultyRatio.errors?.required"> Student Faculty Ratio Is Required</mat-error> -->
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Location</mat-label>
-                                <mat-select>
-                                    <mat-option value="">Select</mat-option>
-                                    <mat-option >Male</mat-option>
-                                    <mat-option >Female</mat-option>
-                                </mat-select>
+                                <mat-label>Basic Pay Amount</mat-label>
+                                <input matInput type="date" formControlName="basicPayAmount">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
+                                <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
+                                <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.touched && basicInfo.controls.studentFacultyRatio.errors?.required"> Student Faculty Ratio Is Required</mat-error> -->
                               </div>
                             </div>
                             <div class="row mt-3">
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Channel</mat-label>
-                                <mat-select>
-                                  <mat-option value="">Select</mat-option>
-                                  <mat-option >Male</mat-option>
-                                  <mat-option >Female</mat-option>
-                                </mat-select>
+                                <mat-label>ENF End Date</mat-label>
+                                <input matInput type="date" formControlName="epfEndDate">
                                 <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
-                                <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
-                                <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.touched && basicInfo.controls.studentFacultyRatio.errors?.required"> Student Faculty Ratio Is Required</mat-error> -->
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Enity</mat-label>
-                                <mat-select>
-                                    <mat-option value="">Select</mat-option>
-                                    <mat-option >Male</mat-option>
-                                    <mat-option >Female</mat-option>
-                                </mat-select>
+                                <mat-label>DP Amount</mat-label>
+                                <input matInput type="number" formControlName="dpAmount">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>DA 1 Amount</mat-label>
+                                <input matInput type="number" formControlName="dA1Amount">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>DA 2 Amount</mat-label>
+                                <input matInput type="number" formControlName="dA2Amount">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>CPF No</mat-label>
+                                <input matInput type="text" formControlName="cpfNo">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>GPF No</mat-label>
+                                <input matInput type="text" formControlName="gpfNo">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>SI No</mat-label>
+                                <input matInput type="text" formControlName="siNo">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>cgisNo</mat-label>
+                                <input matInput type="text" formControlName="cgisNo">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>PAN</mat-label>
+                                <input matInput type="text" formControlName="panNo">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Designation</mat-label>
+                                <input matInput type="text" formControlName="designationId">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Unique ID</mat-label>
+                                <input matInput type="text" formControlName="employeeUniqueID">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
                                 <mat-label>Status</mat-label>
-                                <mat-select>
-                                  <mat-option value="">Select</mat-option>
-                                  <mat-option >DR</mat-option>
-                                  <mat-option >NURSING</mat-option>
-                                  <mat-option >OTHER</mat-option>
-                                </mat-select>
+                                <input matInput type="text" formControlName="empStatus">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Registration Date</mat-label>
-                                <input matInput type="date">
+                                <mat-label>Service Type</mat-label>
+                                <input matInput type="text" formControlName="serviceType">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Expiry Date</mat-label>
-                                <input matInput type="date">
+                                <mat-label>Employee Type</mat-label>
+                                <input matInput type="text" formControlName="employeeType">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Probation End Date</mat-label>
+                                <input matInput type="date" formControlName="employeeType">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Jan Aadhar No.</mat-label>
+                                <input matInput type="text" formControlName="janAadharNo">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                <mat-label>SSO Id</mat-label>
+                                <input matInput type="text" formControlName="ssoid">
+                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                </mat-form-field>
+                              </div>
+                              <div class="col-sm-3">
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Channel</mat-label>
+                                  <mat-select formControlName="sectionId">
+                                    <mat-option value="">Select</mat-option>
+                                    <mat-option >Male</mat-option>
+                                    <mat-option >Female</mat-option>
+                                  </mat-select>
+                                  <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                               </div>
                             </div>
