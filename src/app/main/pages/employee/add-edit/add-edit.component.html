@@ -4,8 +4,6 @@
         <li class="breadcrumb-item"><a href="#">Add Edit Employee</a></li>
         <!-- <li class="breadcrumb-item active" aria-current="page">Form Elements</li> -->
     </ol>
-    {{basicInfo.value | json}}
-    {{secondFormGroup.value | json}}
 </div>
 <!-- PAGE-HEADER END -->
 
@@ -85,6 +83,7 @@
                                     <mat-label>District</mat-label>
                                     <mat-select formControlName="districtId">
                                       <mat-option value="">Select</mat-option>
+                                      <mat-option [value]="item.districtId" *ngFor="let item of DistrictList">{{item.districtName}}</mat-option>
                                     </mat-select>
                                     </mat-form-field>
                                     <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
@@ -97,6 +96,7 @@
                                       <mat-label>Employee Type</mat-label>
                                       <mat-select formControlName="empType">
                                         <mat-option value="">Select</mat-option>
+                                        <mat-option value="1">dev</mat-option>
                                       </mat-select>
                                     </mat-form-field> 
                                   </div>  
@@ -104,9 +104,7 @@
                                     <mat-form-field appearance="outline">
                                     <mat-label>Location</mat-label>
                                     <mat-select formControlName="locationId">
-                                      <mat-option value="">Select</mat-option>
-                                      <mat-option >UP</mat-option>
-                                      <mat-option >MP</mat-option>
+                                      <mat-option [value]="item.locationId" *ngFor="let item of LocationList">{{item.locationName}}</mat-option>
                                     </mat-select>
                                     </mat-form-field>
                                     <!-- <mat-error *ngIf="basicInfo.controls.campusSize.errors?.pattern">Please enter a valid campus size</mat-error> -->
@@ -252,8 +250,8 @@
                                   <mat-label>Employee Status</mat-label>
                                   <mat-select formControlName="empStatus">
                                     <mat-option value="">Select</mat-option>
-                                    <mat-option >Male</mat-option>
-                                    <mat-option >Female</mat-option>
+                                    <mat-option value="true" >active</mat-option>
+                                    <mat-option value="false">inactive</mat-option>
                                   </mat-select>
                                   <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
@@ -263,8 +261,7 @@
                                   <mat-label>Service Type</mat-label>
                                   <mat-select formControlName="serviceType">
                                     <mat-option value="">Select</mat-option>
-                                    <mat-option >Male</mat-option>
-                                    <mat-option >Female</mat-option>
+                                    <mat-option value="full">Full</mat-option>
                                   </mat-select>
                                   <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
@@ -274,8 +271,7 @@
                                   <mat-label>Employee Type</mat-label>
                                   <mat-select formControlName="employeeType">
                                     <mat-option value="">Select</mat-option>
-                                    <mat-option >Male</mat-option>
-                                    <mat-option >Female</mat-option>
+                                    <mat-option value="dev">dev</mat-option>
                                   </mat-select>
                                   <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
@@ -305,9 +301,7 @@
                                 <mat-form-field appearance="outline">
                                   <mat-label>Section</mat-label>
                                   <mat-select formControlName="sectionId">
-                                    <mat-option value="">Select</mat-option>
-                                    <mat-option >Male</mat-option>
-                                    <mat-option >Female</mat-option>
+                                    <mat-option [value]="item.sectionId" *ngFor="let item of SectionList">{{item.sectionName}}</mat-option>
                                   </mat-select>
                                   <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
@@ -325,7 +319,7 @@
                           <p>You are now done.</p>
                           <div class="col-lg-12 mt-3">
                             <button class="float-left btn btn-primary text-uppercase font-size-3" matStepperPrevious>Back</button>
-                            <button class="float-right btn btn-primary text-uppercase font-size-3">Submit</button>
+                            <button class="float-right btn btn-primary text-uppercase font-size-3" (click)="addEmployee()">Submit</button>
                           </div>
                         </mat-step>
                     </mat-horizontal-stepper>

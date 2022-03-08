@@ -9,7 +9,11 @@ import {IEmployee} from '../shared/ts';
   providedIn: 'root'
 })
 export class EmployeeService {
-  subject = new BehaviorSubject<any>( localStorage.getItem('details') || JSON.stringify({EmployeeId: '', designationType: "", designationName: '', shortCode: "", status: false }));
+  subject = new BehaviorSubject<any>(
+    localStorage.getItem('details') || 
+    JSON.stringify(
+      { "empType": "", "employeeName": "", "fatherName": "", "dob": "", "mobile": "", "emailID": "", "locationType": "", "zoneId": "", "districtId": "", "employeeType": "", "locationId": "", "addressDistrictId": "", "address": "", "accountNo": "", "yearOfPosting": "", "adhar": "", "basicPayAmount": "", "epfEndDate": "", "dpAmount": "", "dA1Amount": "", "dA2Amount": "", "cpfNo": "", "gpfNo": "", "siNo": "", "cgisNo": "", "panNo": "", "designationId": "", "employeeUniqueID": "", "empStatus": false, "serviceType": "", "probationEndDate": "", "janAadharNo": "", "ssoid": "", "sectionId": "" }
+    ));
 
   httpOptions = {
     headers: new HttpHeaders({ 
