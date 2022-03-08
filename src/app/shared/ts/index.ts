@@ -156,3 +156,12 @@ export interface IEmployee {
     ssoid ?: string,
     sectionId ?: string
 }
+
+export interface IChildCareLeave {
+    mPleaveId ?: string,
+    leaveType :  string,
+    gender : string,
+    maxLeaveAllowed : number | string,
+    tillChildAge : number | string,
+    status ?: boolean
+}

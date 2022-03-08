@@ -85,6 +85,11 @@ const routes: Routes = [
         path: "location",
         loadChildren: () =>
           import("./pages/location/location.module").then((m) => m.LocationModule)
+      },
+      {
+        path: "ccl",
+        loadChildren: () =>
+          import("./pages/child-care-leave/child-care-leave.module").then((m) => m.ChildCareLeaveModule)
       }
     ]
   }
