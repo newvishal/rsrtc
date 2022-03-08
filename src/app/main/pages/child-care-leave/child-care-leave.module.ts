@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ListComponent } from './list/list.component';
 import { AddEditComponent } from './add-edit/add-edit.component';
@@ -12,7 +13,7 @@ const routes: Routes = [
     component: ListComponent
   },
   {
-    path: "addEditLeaveLimit",
+    path: "addEditCCL",
     component: AddEditComponent
   }
 ];
@@ -25,7 +26,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
-export class LeaveLimitModule { }
+export class ChildCareLeaveModule { }

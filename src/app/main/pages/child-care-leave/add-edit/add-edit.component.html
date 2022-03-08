@@ -1,0 +1,77 @@
+<!-- PAGE-HEADER -->
+<div class="page-header">
+    <ol class="breadcrumb"><!-- breadcrumb -->
+        <li class="breadcrumb-item"><a href="#">Add Edit CCL</a></li>
+        <!-- <li class="breadcrumb-item active" aria-current="page">Form Elements</li> -->
+    </ol>
+</div>
+<!-- PAGE-HEADER END -->
+
+<!-- ROW-1 OPEN -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <!-- <div class="card-header">
+                <h3 class="mb-0 card-title">Default forms</h3>
+            </div> -->
+            <div class="card-body">
+                    <form [formGroup]="ChildCareLeaveForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Leave Type</label>
+                                    <input type="text" formControlName="leaveType" class="form-control" name="example-text-input" placeholder="eg: Casual...">
+                                    <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['leaveType'].errors?.['required']">Please
+                                        Enter Leave Type</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Gender</label>
+                                    <select [ngClass]="{ 'is-invalid': submitted && myForm['gender'].errors }" formControlName="gender" name="stateddl" id="" class="form-control">
+                                        <option value="" selected>Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                    <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['gender'].errors?.['required']">Please
+                                        Select Gender</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Max Leave Allowed</label>
+                                    <input type="text" formControlName="maxLeaveAllowed" [ngClass]="{ 'is-invalid': submitted && myForm['maxLeaveAllowed'].errors }" class="form-control" name="example-text-input" placeholder="eg: 50...">
+                                    <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['maxLeaveAllowed'].errors?.['required']">Please
+                                        Enter Max Leave Allowed</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Till Child Age</label>
+                                    <input formControlName="tillChildAge" type="text" [ngClass]="{ 'is-invalid': submitted && myForm['tillChildAge'].errors }" class="form-control" name="example-text-input" placeholder="eg: 12...">
+                                    <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['tillChildAge'].errors?.['required']">Please
+                                        Enter Till Child Age</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Status</label>
+                                    <select [ngClass]="{ 'is-invalid': submitted && myForm['status'].errors }" formControlName="status" name="stateddl" id="" class="form-control">
+                                        <option value="" selected>Select Status</option>
+                                        <option value="true" selected>True</option>
+                                        <option value="false">False</option>
+                                    </select>
+                                    <small style="padding: 0px;" class="text-danger" *ngIf="submitted && myForm['status'].errors?.['required']">Please
+                                        Select Status</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="submit" value="Submit" class="btn btn-primary float-right">
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ROW-1 CLOSED -->
