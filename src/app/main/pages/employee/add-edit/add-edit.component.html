@@ -4,6 +4,8 @@
         <li class="breadcrumb-item"><a href="#">Add Edit Employee</a></li>
         <!-- <li class="breadcrumb-item active" aria-current="page">Form Elements</li> -->
     </ol>
+    {{basicInfo.value | json}}
+    {{secondFormGroup.value | json}}
 </div>
 <!-- PAGE-HEADER END -->
 
@@ -66,7 +68,7 @@
                                     <mat-form-field appearance="outline">
                                       <mat-label>Location Type</mat-label>
                                       <mat-select formControlName="locationType">
-                                          <mat-option value="">Select</mat-option>
+                                          <mat-option [value]="item.locationTypeId" *ngFor="let item of LocationTypeList">{{item.locationType}}</mat-option>
                                       </mat-select>
                                       </mat-form-field>
                                   </div>
@@ -74,7 +76,7 @@
                                     <mat-form-field appearance="outline">
                                       <mat-label>Zone</mat-label>
                                       <mat-select formControlName="zoneId">
-                                          <mat-option value="">Select</mat-option>
+                                        <mat-option [value]="item.zoneId" *ngFor="let item of ZoneList">{{item.zoneName}}</mat-option>
                                       </mat-select>
                                       </mat-form-field>
                                   </div>
@@ -129,7 +131,7 @@
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
                                 <mat-label>Account No.</mat-label>
-                                <input matInput type="date" formControlName="accountNo">
+                                <input matInput type="number" formControlName="accountNo">
                                 <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                                 <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
@@ -147,7 +149,7 @@
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
                                 <mat-label>Aadhar</mat-label>
-                                <input matInput type="date" formControlName="adhar">
+                                <input matInput type="number" formControlName="adhar">
                                 <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                                 <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
@@ -156,7 +158,7 @@
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
                                 <mat-label>Basic Pay Amount</mat-label>
-                                <input matInput type="date" formControlName="basicPayAmount">
+                                <input matInput type="number" formControlName="basicPayAmount">
                                 <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                                 <!-- <mat-error *ngIf="basicInfo.controls.studentFacultyRatio.errors?.pattern">Please enter a valid ratio</mat-error> -->
@@ -229,9 +231,13 @@
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Designation</mat-label>
-                                <input matInput type="text" formControlName="designationId">
-                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                  <mat-label>Channel</mat-label>
+                                  <mat-select formControlName="designationId">
+                                    <mat-option value="">Select</mat-option>
+                                    <mat-option >Male</mat-option>
+                                    <mat-option >Female</mat-option>
+                                  </mat-select>
+                                  <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                               </div>
                               <div class="col-sm-3">
@@ -243,23 +249,35 @@
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Status</mat-label>
-                                <input matInput type="text" formControlName="empStatus">
-                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                  <mat-label>Employee Status</mat-label>
+                                  <mat-select formControlName="empStatus">
+                                    <mat-option value="">Select</mat-option>
+                                    <mat-option >Male</mat-option>
+                                    <mat-option >Female</mat-option>
+                                  </mat-select>
+                                  <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Service Type</mat-label>
-                                <input matInput type="text" formControlName="serviceType">
-                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                  <mat-label>Service Type</mat-label>
+                                  <mat-select formControlName="serviceType">
+                                    <mat-option value="">Select</mat-option>
+                                    <mat-option >Male</mat-option>
+                                    <mat-option >Female</mat-option>
+                                  </mat-select>
+                                  <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                <mat-label>Employee Type</mat-label>
-                                <input matInput type="text" formControlName="employeeType">
-                                <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
+                                  <mat-label>Employee Type</mat-label>
+                                  <mat-select formControlName="employeeType">
+                                    <mat-option value="">Select</mat-option>
+                                    <mat-option >Male</mat-option>
+                                    <mat-option >Female</mat-option>
+                                  </mat-select>
+                                  <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                               </div>
                               <div class="col-sm-3">
@@ -285,7 +303,7 @@
                               </div>
                               <div class="col-sm-3">
                                 <mat-form-field appearance="outline">
-                                  <mat-label>Channel</mat-label>
+                                  <mat-label>Section</mat-label>
                                   <mat-select formControlName="sectionId">
                                     <mat-option value="">Select</mat-option>
                                     <mat-option >Male</mat-option>
@@ -294,6 +312,7 @@
                                   <!-- <mat-hint align="end">eg. 1-10</mat-hint> -->
                                 </mat-form-field>
                               </div>
+                              
                             </div>
                             <div class="col-lg-12 mt-3">
                               <button class="float-left btn btn-primary text-uppercase font-size-3" matStepperPrevious>Back</button>

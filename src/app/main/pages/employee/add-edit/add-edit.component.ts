@@ -37,16 +37,17 @@ export class AddEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.basicInfo = this._formBuilder.group({
-      locationType: [''],
-      zoneId: [''],
-      districtId: [''],
-      locationId: [''],
       empType: ['',],
       employeeName: [''],
       fatherName: [''],
+      dob: [''],
       mobile: [''],
       emailID: [''],
-      dob: [''],
+      locationType: [''],
+      zoneId: [''],
+      districtId: [''],
+      employeeType: [''],
+      locationId: [''],
       addressDistrictId: [''],
       address: [''],
     });
