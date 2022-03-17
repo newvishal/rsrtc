@@ -55,7 +55,7 @@ export class AddEditComponent implements OnInit {
     if (this.bankForm.invalid) {
       return;
     } else {
-      const modalRef = this.confirmModalServ.open("200px", "400px", "Confirm", "Are you Sure ?", true, true, "ok", "cancel")
+      const modalRef = this.confirmModalServ.open("200px", "400px", "Confirm", "Are you Sure ?", true, true, "ok", "cancel");
       modalRef.afterClosed().subscribe(result => {
         const { event } = result;
         if(event === 'Close') {
