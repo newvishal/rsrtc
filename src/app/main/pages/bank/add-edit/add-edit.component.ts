@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
 import { ToastrManager } from 'ng6-toastr-notifications';
-import { Observable } from 'rxjs';
+
 import { BankService } from 'src/app/services/bank.service';
+import { ConfirmdialogService } from 'src/app/services/confirmdialog.service';
 
 import {IBank} from '../../../../shared/ts';
 
@@ -16,7 +19,14 @@ export class AddEditComponent implements OnInit {
   bankForm: FormGroup;
   submitted = false;
   bsubject: IBank;
-  constructor(private formBuilder: FormBuilder,public toastr: ToastrManager,private bankService: BankService,private _router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    public toastr: ToastrManager,
+    private bankService: BankService,
+    private _router: Router,
+    public matDialog: MatDialog,
+    public confirmModalServ: ConfirmdialogService
+    ) { }
 
   ngOnInit(): void {
     this.bankForm = this.formBuilder.group({
@@ -45,32 +55,43 @@ export class AddEditComponent implements OnInit {
     if (this.bankForm.invalid) {
       return;
     } else {
-      if(this.bsubject.bankId) {
-        this.bankService.put({...this.bankForm.value, bankId: this.bsubject.bankId} as IBank, this.bsubject.bankId).subscribe({
-          next: res =>{
-            this._router.navigate(["dashboard/bank/"]);
-            this.toastr.successToastr(res['message']);
-            localStorage.removeItem('details');
-            this.bankService.saveBankById({bankName: '', bankId: "", shortCode: '', status: false })
-          },
-          error: err =>{
-            console.log(err);
-            this.toastr.warningToastr(err);
-          }
-        })
-        return
-      }
-      this.bankService.addBank({...this.bankForm.value} as IBank).subscribe({
+      const modalRef = this.confirmModalServ.open("200px", "400px", "Confirm", "Are you Sure ?", true, true, "ok", "cancel")
+      modalRef.afterClosed().subscribe(result => {
+        const { event } = result;
+        if(event === 'Close') {
+          return;
+        }
+        this.SaveBank();
+      });
+    }
+  }
+
+  SaveBank() {
+    if(this.bsubject.bankId) {
+      this.bankService.put({...this.bankForm.value, bankId: this.bsubject.bankId} as IBank, this.bsubject.bankId).subscribe({
         next: res =>{
           this._router.navigate(["dashboard/bank/"]);
           this.toastr.successToastr(res['message']);
+          localStorage.removeItem('details');
+          this.bankService.saveBankById({bankName: '', bankId: "", shortCode: '', status: false })
         },
         error: err =>{
           console.log(err);
           this.toastr.warningToastr(err);
         }
       })
+      return;
     }
-
+    this.bankService.addBank({...this.bankForm.value} as IBank).subscribe({
+      next: res =>{
+        this._router.navigate(["dashboard/bank/"]);
+        this.toastr.successToastr(res['message']);
+      },
+      error: err =>{
+        console.log(err);
+        this.toastr.warningToastr(err);
+      }
+    })
   }
+
 }

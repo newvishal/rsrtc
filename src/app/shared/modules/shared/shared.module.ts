@@ -16,8 +16,13 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ConfirmdialogComponent } from '../../component/confirmdialog/confirmdialog.component';
+import { ConfirmdialogService } from 'src/app/services/confirmdialog.service';
 @NgModule({
-  declarations: [],
+  declarations: [
+    ConfirmdialogComponent
+  ],
   imports: [
     CommonModule,
     MatTableModule,
@@ -33,10 +38,13 @@ import { MatSelectModule } from '@angular/material/select';
     MatSnackBarModule,
     MatButtonModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
+  providers: [ConfirmdialogService],
+  entryComponents: [ConfirmdialogComponent],
   exports: [ReactiveFormsModule, MatProgressSpinnerModule,MatTooltipModule,MatIconModule, MatFormFieldModule, 
             MatTableModule, MatPaginatorModule, MatInputModule, MatSortModule, MatCheckboxModule, MatOptionModule,MatStepperModule,
-            MatSnackBarModule,MatButtonModule,MatSelectModule]
+            MatSnackBarModule,MatButtonModule,MatSelectModule, MatDialogModule]
 })
 export class SharedModule { }

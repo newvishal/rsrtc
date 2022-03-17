@@ -6,10 +6,12 @@ import { ToastrModule } from 'ng6-toastr-notifications';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// import { ConfirmdialogComponent } from './shared/component/confirmdialog/confirmdialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
