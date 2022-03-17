@@ -1,5 +1,9 @@
 # Rsrtc
 
+#Inject Service
+```
+public confirmModalServ: ConfirmdialogService
+```
 ## Shared Popup Code
 ```
  const modalRef = this.confirmModalServ.open("200px", "400px", "Confirm", "Are you Sure ?", true, true, "ok", "cancel");

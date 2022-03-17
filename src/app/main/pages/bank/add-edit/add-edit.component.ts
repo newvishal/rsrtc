@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 import { ToastrManager } from 'ng6-toastr-notifications';
@@ -24,7 +23,6 @@ export class AddEditComponent implements OnInit {
     public toastr: ToastrManager,
     private bankService: BankService,
     private _router: Router,
-    public matDialog: MatDialog,
     public confirmModalServ: ConfirmdialogService
     ) { }
 
